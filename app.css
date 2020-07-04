@@ -33,7 +33,7 @@ body section, html section {
 }
 
 body section h3, html section h3 {
-  padding: 60px 0px 50px;
+  padding: 20px 0px 20px;
 }
 
 body {
@@ -50,15 +50,37 @@ h3 {
 @media (min-width: 300px) and (max-width: 1499px) {
   h3 {
     /* Adds a fallback for unsupported browsers */
-    font-size: 30px;
+    font-size: 27.5px;
     /* The fluid typography magic 🌟  */
-    font-size: calc(10px + (50 - 10) * (100vw - 300px) / (1500 - 300));
+    font-size: calc(10px + (45 - 10) * (100vw - 300px) / (1500 - 300));
   }
 }
 
 @media (min-width: 1500px) {
   h3 {
-    font-size: 50px;
+    font-size: 45px;
+  }
+}
+
+.nav-link {
+  /* Define variable for media query */
+  /* Define variable for fallback */
+  /* Base font size */
+  font-size: 10px;
+}
+
+@media (min-width: 300px) and (max-width: 1499px) {
+  .nav-link {
+    /* Adds a fallback for unsupported browsers */
+    font-size: 20px;
+    /* The fluid typography magic 🌟  */
+    font-size: calc(10px + (30 - 10) * (100vw - 300px) / (1500 - 300));
+  }
+}
+
+@media (min-width: 1500px) {
+  .nav-link {
+    font-size: 30px;
   }
 }
 
@@ -196,13 +218,6 @@ nav ul a:hover, nav ul a .active {
   margin: 5px 20px;
 }
 
-.logo-brand {
-  height: 107px;
-  width: 230px;
-  margin-right: 30px;
-  margin-left: 170px;
-}
-
 .card-logo img {
   max-width: 100%;
   max-height: 100%;
@@ -235,6 +250,10 @@ nav ul a:hover, nav ul a .active {
 
 #services {
   background: #E3E9E4;
+}
+
+#services .card {
+  padding: 110px 20px 10px;
 }
 
 #services .card-logo {
@@ -606,7 +625,6 @@ nav ul a:hover, nav ul a .active {
           align-items: center;
   background: url("assets/tile.jpg");
   border-radius: 15px;
-  padding: 110px 20px 10px;
   margin: 50px 30px;
   text-align: center;
 }
