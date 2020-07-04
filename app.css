@@ -44,15 +44,15 @@ h3 {
   /* Define variable for media query */
   /* Define variable for fallback */
   /* Base font size */
-  font-size: 15px;
+  font-size: 10px;
 }
 
 @media (min-width: 300px) and (max-width: 1499px) {
   h3 {
     /* Adds a fallback for unsupported browsers */
-    font-size: 32.5px;
+    font-size: 30px;
     /* The fluid typography magic 🌟  */
-    font-size: calc(15px + (50 - 15) * (100vw - 300px) / (1500 - 300));
+    font-size: calc(10px + (50 - 10) * (100vw - 300px) / (1500 - 300));
   }
 }
 
@@ -62,26 +62,26 @@ h3 {
   }
 }
 
-p, blockquote {
+p, .blockquote {
   /* Define variable for media query */
   /* Define variable for fallback */
   /* Base font size */
-  font-size: 12px;
+  font-size: 8px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
 @media (min-width: 300px) and (max-width: 1499px) {
-  p, blockquote {
+  p, .blockquote {
     /* Adds a fallback for unsupported browsers */
-    font-size: 18px;
+    font-size: 16px;
     /* The fluid typography magic 🌟  */
-    font-size: calc(12px + (24 - 12) * (100vw - 300px) / (1500 - 300));
+    font-size: calc(8px + (24 - 8) * (100vw - 300px) / (1500 - 300));
   }
 }
 
 @media (min-width: 1500px) {
-  p, blockquote {
+  p, .blockquote {
     font-size: 24px;
   }
 }
@@ -90,16 +90,16 @@ p, blockquote {
   /* Define variable for media query */
   /* Define variable for fallback */
   /* Base font size */
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 900;
 }
 
 @media (min-width: 300px) and (max-width: 1499px) {
   .lead {
     /* Adds a fallback for unsupported browsers */
-    font-size: 20.5px;
+    font-size: 18.5px;
     /* The fluid typography magic 🌟  */
-    font-size: calc(14px + (27 - 14) * (100vw - 300px) / (1500 - 300));
+    font-size: calc(10px + (27 - 10) * (100vw - 300px) / (1500 - 300));
   }
 }
 
