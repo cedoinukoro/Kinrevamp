@@ -1,14 +1,19 @@
 @charset "UTF-8";
 /* Define the mixin */
-html {
+body, html {
   /* Define variable for media query */
   /* Define variable for fallback */
   /* Base font size */
   font-size: 16px;
+  max-width: 100vw;
+  margin: 5px 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
 }
 
 @media (min-width: 300px) and (max-width: 1499px) {
-  html {
+  body, html {
     /* Adds a fallback for unsupported browsers */
     font-size: 20.5px;
     /* The fluid typography magic 🌟  */
@@ -17,21 +22,22 @@ html {
 }
 
 @media (min-width: 1500px) {
-  html {
+  body, html {
     font-size: 25px;
   }
 }
 
-body {
-  max-width: 100vw;
-  margin: 5px;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
+body section, html section {
+  max-width: 100%;
+  padding-bottom: 20px;
 }
 
-body section {
-  max-width: 100%;
+body section h3, html section h3 {
+  padding: 60px 0px 50px;
+}
+
+body {
+  position: relative;
 }
 
 h3 {
@@ -84,26 +90,26 @@ p, blockquote {
   /* Define variable for media query */
   /* Define variable for fallback */
   /* Base font size */
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 900;
 }
 
 @media (min-width: 300px) and (max-width: 1499px) {
   .lead {
     /* Adds a fallback for unsupported browsers */
-    font-size: 24px;
+    font-size: 20.5px;
     /* The fluid typography magic 🌟  */
-    font-size: calc(20px + (28 - 20) * (100vw - 300px) / (1500 - 300));
+    font-size: calc(14px + (27 - 14) * (100vw - 300px) / (1500 - 300));
   }
 }
 
 @media (min-width: 1500px) {
   .lead {
-    font-size: 28px;
+    font-size: 27px;
   }
 }
 
-p, blockquote {
+p, .blockquote {
   font-family: "Raleway", sans-serif;
 }
 
@@ -122,10 +128,6 @@ li {
 
 li a {
   text-decoration: none;
-}
-
-.container-fluid h3 {
-  padding-top: 40px;
 }
 
 .bg-white {
@@ -180,7 +182,7 @@ nav ul a:hover, nav ul a .active {
 }
 
 #site-footer a {
-  font-size: 15px;
+  font-size: 20px;
   text-decoration: none;
   padding-right: 2px;
   padding-left: 2px;
@@ -229,7 +231,6 @@ nav ul a:hover, nav ul a .active {
   background-position-x: 85%;
   background-size: 40%;
   z-index: -2;
-  padding: 50px;
 }
 
 #services {
@@ -433,7 +434,8 @@ nav ul a:hover, nav ul a .active {
 }
 
 #findus .text {
-  padding: 20px 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #findus .text p {
@@ -448,10 +450,14 @@ nav ul a:hover, nav ul a .active {
 
 #ourteam .card img {
   margin-top: -90px;
+  max-width: 250px;
+  max-height: 250px;
 }
 
 #ourteam .card-text {
-  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
 }
 
 #testimonials aside.social-aside {
@@ -601,8 +607,12 @@ nav ul a:hover, nav ul a .active {
   background: url("assets/tile.jpg");
   border-radius: 15px;
   padding: 110px 20px 10px;
-  margin: 110px 30px;
+  margin: 50px 30px;
   text-align: center;
+}
+
+#services .wrapper-cards .card:first-child, #ourteam .wrapper-cards .card:first-child {
+  margin-top: 110px;
 }
 
 /* Define the mixin */
@@ -719,7 +729,7 @@ nav ul a:hover, nav ul a .active {
 
 @media only screen and (min-device-width: 280px) and (max-device-width: 450px) {
   body {
-    width: 100vh;
+    width: 100%;
   }
   #slider img {
     height: 50vh;
@@ -737,7 +747,7 @@ nav ul a:hover, nav ul a .active {
 
 @media only screen and (min-device-width: 425px) and (max-device-width: 768px) {
   body {
-    width: 100vh;
+    width: 100%;
   }
   #intro {
     background-size: 60%;
