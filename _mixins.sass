@@ -1,0 +1,107 @@
+/* Define the mixin */
+@mixin fluid-typography($minFont,$maxFont,$minBreakpoint,$maxBreakpoint) 
+  
+  /* Define variable for media query */
+  $maxLessOne: $maxBreakpoint - 1
+  
+  /* Define variable for fallback */
+  $avg: ($maxFont + $minFont) / 2
+ 
+  /* Base font size */
+  font-size: #{$minFont}px
+  
+  @media (min-width: #{$minBreakpoint}px) and (max-width: #{$maxLessOne}px) 
+      
+      /* Adds a fallback for unsupported browsers */
+      font-size: #{$avg}px
+        
+      /* The fluid typography magic 🌟  */
+      font-size: calc(#{$minFont}px + (#{$maxFont} - #{$minFont}) * (100vw - #{$minBreakpoint}px) / (#{$maxBreakpoint} - #{$minBreakpoint}))
+      
+
+  @media (min-width: #{$maxBreakpoint}px) 
+    font-size: #{$maxFont}px
+
+@mixin make-logo-circle($sizemin,$sizemax)
+  background: 0% 0% no-repeat padding-box
+  border-radius: 100%
+  min-height: $sizemin
+  max-height: $sizemin
+  max-height: $sizemax
+  max-width: $sizemax
+
+
+@mixin minMaxSize($heightMin, $widthMin, $heightMax, $widthMax)
+  min-height: $heightMin
+  min-width: $widthMin
+  max-height: $heightMax
+  max-width: $widthMax
+  
+// make social badges shape
+@mixin make-badge($bgColor: $bg-primary , $sizeMin: 50px, $sizeMax: 100px, $height: 40px, $width: 40px, $font-size: 30px)
+
+  .badge.social
+  min-height: $sizeMin
+  min-width: $sizeMin
+  max-height: $sizeMax
+  max-height: $sizeMax
+  background: darken($bgColor,20%)
+  border-radius: 100%
+  text-align: center
+  +padding($height $width)
+  display: table
+  line-height: $height
+  
+  span
+    font-size: $font-size
+    color: white   
+    display: table-cell
+    vertical-align:middle  
+  
+// make button shadow
+@mixin btnStyle($color,$shadowSize)
+  background: $color
+  background: -moz-linear-gradient(0% 100% 90deg, $btn-primary, darken($color,20%))
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color), to(darken($color,20%)))
+  border: solid 1px +border-color(darken($color,15%) darken($color,10%) $color darken($color,8%))
+  -moz-box-shadow: inset 0 $shadowSize 3px 0 lighten($color,33%), 0 $shadowSize 3px 0 darken($color,5%)
+  -webkit-box-shadow: inset 0 $shadowSize 3px 0 lighten($color,33%), 0 $shadowSize 3px 0 darken($color,5%)
+  text-shadow: 0 -1px 1px lighten($color, 5%)
+  outline-color: $color
+
+  
+
+  &:hover
+    color: #fff
+    background: -moz-linear-gradient(0% 100% 90deg, darken($btn-primary, 10%), darken($btn-primary, 25%))
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(darken($btn-primary, 10%)) to(darken($btn-primary, 25%)))
+    border: 1px solid +border-color(darken($btn-primary,15%) darken($btn-primary,10%) $btn-primary darken($btn-primary,8%))
+    -moz-box-shadow: inset 0 2px 0 0 darken($bg-primary, 5%)
+    -webkit-box-shadow: inset 0 2px 0 0 darken($bg-primary, 5%)
+    cursor: pointer
+    text-shadow: 0 -1px 1px lighten($btn-primary, 2%)
+    
+
+  &:active
+    color: #fff
+    background: -moz-linear-gradient(0% 100% 90deg, darken( $color, 15%), darken($color, 30%))
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(darken( $color, 15%)) to(darken( $color, 30%)))
+    border: 1px solid +border-color(darken( $color,20%) darken( $color,15%)  $color darken( $color,10%))
+    -moz-box-shadow: inset 0 1px 0 0 darken( $color, 8%)
+    -webkit-box-shadow: inset 0 1px 0 0 darken( $color, 8%)
+    cursor: pointer
+    text-shadow: 0 -1px 1px  $color
+    
+
+  &:focus
+    color: #fff
+    background: -moz-linear-gradient(0% 100% 90deg, darken( $color, 15%), darken( $color, 30%))
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(darken( $color, 15%)) to(darken( $color, 30%)))
+    border: 1px solid +border-color(darken( $color,20%) darken( $color,15%)  $color darken( $color,10%))
+    -moz-box-shadow: inset 0 0px 0 0 darken($bg-primary, 8%)
+    -webkit-box-shadow: inset 0 0px 0 0 darken( $color, 8%)
+    cursor: pointer
+    text-shadow: 0 -1px 1px  $color
+    outline: none
+    
+    
